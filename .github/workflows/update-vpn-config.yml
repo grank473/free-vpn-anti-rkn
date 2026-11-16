@@ -21,7 +21,7 @@ jobs:
       - name: Fetch and reduce all 26 lists (1/4 configs each, max 300)
         run: |
           mkdir -p configs
-          BASE="https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/githubmirror"
+          BASE="https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror"
           MAX=300
           printf 'OpenRay\n5ubscrpt10n\nproxy-minging\nAutoVPN\nV2RayCFGDumper\nopenproxylist\nv2ray-configs\ncid-vpn-config\ntelegram-v2ray-configs\n.proxy\nV2rayCollector\n.proxy\nconfig\nMineral\nConfig-Collector\nFree-servers\nV2rayCollector_Py\nv2ray\nV2rayCollector\nProxy-List\nkamaji\nxray-config-toolkit\nXray\nSTRUGOV\nV2RayConfig\nОбход SNI/CIDR\n' > names_aven.txt
           for i in $(seq 1 26); do
@@ -108,7 +108,7 @@ jobs:
 
       - name: Fetch full lists (1.2, 2.2, …, 26.2) from AvenCores — только для 1–26
         run: |
-          BASE="https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/githubmirror"
+          BASE="https://raw.githubusercontent.com/aneek0/goida-vpn-configs/refs/heads/main/githubmirror"
           printf 'OpenRay\n5ubscrpt10n\nproxy-minging\nAutoVPN\nV2RayCFGDumper\nopenproxylist\nv2ray-configs\ncid-vpn-config\ntelegram-v2ray-configs\n.proxy\nV2rayCollector\n.proxy\nconfig\nMineral\nConfig-Collector\nFree-servers\nV2rayCollector_Py\nv2ray\nV2rayCollector\nProxy-List\nkamaji\nxray-config-toolkit\nXray\nSTRUGOV\nV2RayConfig\nОбход\n' > names_aven.txt
           for i in $(seq 1 26); do
             curl -sLf "${BASE}/${i}.txt" -o full.txt || true
